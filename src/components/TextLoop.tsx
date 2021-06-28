@@ -8,7 +8,6 @@ import {
 import cxs from "cxs";
 import isEqual from "react-fast-compare";
 import { requestTimeout, clearRequestTimeout, RequestTimeout } from "../utils";
-import { ReactNode } from "react";
 
 type Props = {
     children?: (JSX.Element | string)[];
@@ -27,8 +26,8 @@ type Props = {
 };
 
 type State = {
-    elements: (Exclude<ReactNode, boolean | null | undefined> | JSX.Element | string | undefined)[];
-    currentEl: Exclude<ReactNode, boolean | null | undefined> | JSX.Element | string | undefined;
+    elements: (JSX.Element | string | number | {} | undefined)[];
+    currentEl: JSX.Element | string | number | {} | undefined;
     currentWordIndex: number;
     wordCount: number;
     currentInterval: number;
